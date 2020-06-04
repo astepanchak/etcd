@@ -1,0 +1,457 @@
+Andreys-MBP:terraform astepanchak$ terraform apply
+
+Warning: template_file.srv_etcd_client_record[0]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+Warning: template_file.srv_etcd_client_record[1]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+Warning: template_file.srv_etcd_client_record[2]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+Warning: template_file.srv_etcd_server_record[0]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+Warning: template_file.srv_etcd_server_record[1]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+Warning: template_file.srv_etcd_server_record[2]: using template_file as a resource is deprecated; consider using the data source instead
+
+
+
+template_file.srv_etcd_server_record[2]: Refreshing state... (ID: 54a2645aa2c3fdf0adcfdec4a0be0e4b6757cac76abdcda38f804ba2be81e9c0)
+template_file.srv_etcd_server_record[1]: Refreshing state... (ID: 0acd684fd894224494969770ae6fe66764c289f2df87e155073903c23d438dc3)
+template_file.srv_etcd_server_record[0]: Refreshing state... (ID: 0f419bf8433738c4b44ffd306e785a8e7ca3360d9385bc6fa0ce7bd14417242f)
+template_file.srv_etcd_client_record[1]: Refreshing state... (ID: 1cf2b2ca3aacc837a9f5753c00a5165350252de3d3e3fce6a50305545a899d9f)
+template_file.srv_etcd_client_record[0]: Refreshing state... (ID: a9ab96b089877851bdab2ae485dbb44f63bc83c605c0bab6cd591f8b39c54a1d)
+template_file.srv_etcd_client_record[2]: Refreshing state... (ID: 840b7462580d0ea48952f9a5e5d96d25fed16f080bf1ff8d26244269f4a2c51d)
+data.template_file.base_user_data: Refreshing state...
+aws_eip.nat[1]: Refreshing state... (ID: eipalloc-06a8980d34adf4b26)
+aws_eip.nat[2]: Refreshing state... (ID: eipalloc-0b3538bd00e66b1df)
+aws_eip.nat[0]: Refreshing state... (ID: eipalloc-05987a2c42a4dd2d7)
+aws_ebs_volume.etcd_data[2]: Refreshing state... (ID: vol-0330a0b2483e7f1d9)
+aws_ebs_volume.etcd_data[0]: Refreshing state... (ID: vol-0cf942bf4f702e19e)
+aws_ebs_volume.etcd_data[1]: Refreshing state... (ID: vol-012850dceac6fd3bf)
+aws_iam_role.etcd: Refreshing state... (ID: etcd-node)
+aws_vpc.main: Refreshing state... (ID: vpc-000dc4daaf049ded9)
+data.aws_caller_identity.current: Refreshing state...
+aws_iam_role_policy.attach_volume: Refreshing state... (ID: etcd-node:attach-volume)
+aws_iam_instance_profile.etcd: Refreshing state... (ID: etcd-node)
+aws_security_group.etcdlb: Refreshing state... (ID: sg-0f286bca062ce2b65)
+aws_route53_zone.internal: Refreshing state... (ID: Z02918401A2Y7UTP5RK73)
+aws_security_group.bastion: Refreshing state... (ID: sg-0d5577d2771cb8885)
+aws_internet_gateway.gw: Refreshing state... (ID: igw-08d2c4381c668139f)
+aws_subnet.dmz[1]: Refreshing state... (ID: subnet-0b444782c731d2cc5)
+aws_subnet.dmz[0]: Refreshing state... (ID: subnet-0a765e74da77e9798)
+aws_subnet.dmz[2]: Refreshing state... (ID: subnet-0e72fd8bdbd861bd9)
+aws_subnet.private[1]: Refreshing state... (ID: subnet-08a753368c3cc4973)
+aws_subnet.private[0]: Refreshing state... (ID: subnet-011c4aecb67a95287)
+aws_subnet.private[2]: Refreshing state... (ID: subnet-0c8f818b0a10465d5)
+aws_route_table.inetgw: Refreshing state... (ID: rtb-02f5e9047fd5cf661)
+aws_security_group.internal: Refreshing state... (ID: sg-06a252dd6d164e230)
+aws_instance.bastion: Refreshing state... (ID: i-0bc720592adf337ac)
+aws_nat_gateway.nat[1]: Refreshing state... (ID: nat-0bc36ad4f1ee50e12)
+aws_nat_gateway.nat[2]: Refreshing state... (ID: nat-066ac1d38094cdfd3)
+aws_nat_gateway.nat[0]: Refreshing state... (ID: nat-07291f488b5be3cd9)
+aws_route_table_association.dmzinetgw[2]: Refreshing state... (ID: rtbassoc-0f905a6df46035d4b)
+aws_route_table_association.dmzinetgw[1]: Refreshing state... (ID: rtbassoc-0a5e61a2449f248bb)
+aws_route_table_association.dmzinetgw[0]: Refreshing state... (ID: rtbassoc-0c5848cd0cd63327b)
+aws_route_table.nat[1]: Refreshing state... (ID: rtb-010e6b39bc49e5975)
+aws_route_table.nat[0]: Refreshing state... (ID: rtb-083f1ac1388c1a71b)
+aws_route_table.nat[2]: Refreshing state... (ID: rtb-0857941258b24575d)
+aws_route_table_association.nat[0]: Refreshing state... (ID: rtbassoc-07c686632b93df49f)
+aws_route_table_association.nat[2]: Refreshing state... (ID: rtbassoc-033c02358aa15a7fa)
+aws_route_table_association.nat[1]: Refreshing state... (ID: rtbassoc-0725958f2d0495165)
+aws_route53_record.srv_etcd_client: Refreshing state... (ID: Z02918401A2Y7UTP5RK73__etcd-client._tcp_SRV)
+aws_iam_role_policy.etcd_update_dns_record: Refreshing state... (ID: etcd-node:manage-route53-records)
+aws_route53_record.srv_etcd_server: Refreshing state... (ID: Z02918401A2Y7UTP5RK73__etcd-server._tcp_SRV)
+aws_instance.etcd[0]: Refreshing state... (ID: i-0b90df9609960e017)
+aws_instance.etcd[1]: Refreshing state... (ID: i-0e1e6f1293b393b5f)
+aws_instance.etcd[2]: Refreshing state... (ID: i-07d758a15f27c1d36)
+aws_elb.etcd: Refreshing state... (ID: andrey-etcd)
+null_resource.ssh_cfg: Refreshing state... (ID: 1587758898570209959)
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+-/+ destroy and then create replacement
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+ <= data.template_file.etcd_user_data
+      id:                                <computed>
+      rendered:                          <computed>
+      template:                          "#cloud-config\n\n## 1. Package upgrade and instally Python 2.x (to bootstrap Ansible)\n## 2. Attach data volume\n## 3. Set hostname and create private DNS CNAME record (based on http://scraplab.net/custom-ec2-hostnames-and-dns-entries/)\n\n## For cloud-config syntax see: https://github.com/number5/cloud-init/blob/master/doc/examples/\n\n# Run apt-get update\npackage_update: true\n\n# Install packages (AWS CLI for boot scripts, below; Python 2.x for Ansible)\npackages:\n  - awscli\n  - python\n\n# Set the hostname and FQDN\nhostname: \"#HOSTNAME\"\nfqdn: \"#HOSTNAME.${domain_name}\"\n# Set our hostname in /etc/hosts too\nmanage_etc_hosts: true\n\nwrite_files:\n  # Attach EBS data volume (first boot only)\n  - content: |\n      #!/bin/sh\n      REGION=\"${region}\"\n      VOLUME_ID=#VOLUMEID\n      SELF_META_URL=\"http://169.254.169.254/latest/meta-data\"\n      INSTANCE_ID=$(curl $${SELF_META_URL}/instance-id 2>/dev/null)\n\n      aws ec2 attach-volume --volume-id $${VOLUME_ID} --instance-id $${INSTANCE_ID} --device /dev/sdh --region $${REGION}\n    path: /var/lib/cloud/scripts/per-once/attach_data_volume.sh\n    permissions: 0755\n\n  # Write a script that executes on every boot and sets a DNS entry pointing to\n  # this instance. This requires the instance having an appropriate IAM role set,\n  # so it has permission to perform the changes to Route53.\n  - content: |\n      #!/bin/sh\n      FQDN=`hostname -f`\n      ZONE_ID=\"${zone_id}\"\n      TTL=${record_ttl}\n      SELF_META_URL=\"http://169.254.169.254/latest/meta-data\"\n      PRIVATE_DNS=$(curl $${SELF_META_URL}/local-hostname 2>/dev/null)\n\n      cat << EOT > /tmp/aws_r53_batch.json\n      {\n        \"Comment\": \"Assign AWS Private DNS as a CNAME of hostname\",\n        \"Changes\": [\n          {\n            \"Action\": \"UPSERT\",\n            \"ResourceRecordSet\": {\n              \"Name\": \"$${FQDN}.\",\n              \"Type\": \"CNAME\",\n              \"TTL\": $${TTL},\n              \"ResourceRecords\": [\n                {\n                  \"Value\": \"$${PRIVATE_DNS}\"\n                }\n              ]\n            }\n          }\n        ]\n      }\n      EOT\n\n      aws route53 change-resource-record-sets --hosted-zone-id $${ZONE_ID} --change-batch file:///tmp/aws_r53_batch.json\n      rm -f /tmp/aws_r53_batch.json\n    path: /var/lib/cloud/scripts/per-boot/set_route53_dns.sh\n    permissions: 0755\n"
+      vars.%:                            "4"
+      vars.domain_name:                  "vpc.aws"
+      vars.record_ttl:                   "60"
+      vars.region:                       "us-east-1"
+      vars.zone_id:                      "Z02918401A2Y7UTP5RK73"
+
+ <= data.template_file.ssh_cfg
+      id:                                <computed>
+      rendered:                          <computed>
+      template:                          "Host bastion ${bastion_public_ip} ${bastion_public_dns}\n  Hostname ${bastion_public_ip}\n  User ${bastion_user}\n  ForwardAgent yes\n  ControlMaster auto\n  ControlPath ~/.ssh/ansible-%r@%h:%p\n  ControlPersist 5m\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n\nHost *.${internal_dns_zone_name} ${vpc_cidr_glob}\n  ProxyCommand ssh ${bastion_user}@${bastion_public_ip} -W %h:%p -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n  User ${etcd_user}\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n"
+      vars.%:                            "6"
+      vars.bastion_public_dns:           "ec2-3-228-5-226.compute-1.amazonaws.com"
+      vars.bastion_public_ip:            "3.228.5.226"
+      vars.bastion_user:                 "ubuntu"
+      vars.etcd_user:                    "ubuntu"
+      vars.internal_dns_zone_name:       "vpc.aws"
+      vars.vpc_cidr_glob:                "10.42.*"
+
+  ~ aws_elb.etcd
+      instances.#:                       "" => <computed>
+
+-/+ aws_instance.etcd[0] (new resource required)
+      id:                                "i-0b90df9609960e017" => <computed> (forces new resource)
+      ami:                               "ami-039a49e70ea773ffc" => "ami-039a49e70ea773ffc"
+      arn:                               "arn:aws:ec2:us-east-1:857934240020:instance/i-0b90df9609960e017" => <computed>
+      associate_public_ip_address:       "false" => <computed>
+      availability_zone:                 "us-east-1a" => "us-east-1a"
+      cpu_core_count:                    "1" => <computed>
+      cpu_threads_per_core:              "1" => <computed>
+      ebs_block_device.#:                "1" => <computed>
+      ephemeral_block_device.#:          "0" => <computed>
+      get_password_data:                 "false" => "false"
+      host_id:                           "" => <computed>
+      iam_instance_profile:              "etcd-node" => "etcd-node"
+      instance_state:                    "running" => <computed>
+      instance_type:                     "t2.micro" => "t2.micro"
+      ipv6_address_count:                "0" => <computed>
+      ipv6_addresses.#:                  "0" => <computed>
+      key_name:                          "andreys-MBP" => "andreys-MBP"
+      metadata_options.#:                "1" => <computed>
+      network_interface.#:               "0" => <computed>
+      network_interface_id:              "" => <computed>
+      outpost_arn:                       "" => <computed>
+      password_data:                     "" => <computed>
+      placement_group:                   "" => <computed>
+      primary_network_interface_id:      "eni-0816955c845ed7893" => <computed>
+      private_dns:                       "ip-10-42-0-71.ec2.internal" => <computed>
+      private_ip:                        "10.42.0.71" => <computed>
+      public_dns:                        "" => <computed>
+      public_ip:                         "" => <computed>
+      root_block_device.#:               "1" => <computed>
+      security_groups.#:                 "0" => <computed>
+      source_dest_check:                 "true" => "true"
+      subnet_id:                         "subnet-011c4aecb67a95287" => "subnet-011c4aecb67a95287"
+      tags.%:                            "5" => "5"
+      tags.Name:                         "etcd-0" => "etcd-0"
+      tags.Owner:                        "Andrey" => "Andrey"
+      tags.ansibleFilter:                "ETCD01" => "ETCD01"
+      tags.ansibleGroup:                 "etcd" => "etcd"
+      tags.ansibleNodeName:              "etcd0" => "etcd0"
+      tenancy:                           "default" => <computed>
+      user_data:                         "a04fdebf34df4cdedeed19ebda00e67ba12d9333" => "20133a718a717eae7faa084bf94a07c24e49dcd3" (forces new resource)
+      volume_tags.%:                     "2" => <computed>
+      vpc_security_group_ids.#:          "1" => "1"
+      vpc_security_group_ids.1746658572: "sg-06a252dd6d164e230" => "sg-06a252dd6d164e230"
+
+-/+ aws_instance.etcd[1] (new resource required)
+      id:                                "i-0e1e6f1293b393b5f" => <computed> (forces new resource)
+      ami:                               "ami-039a49e70ea773ffc" => "ami-039a49e70ea773ffc"
+      arn:                               "arn:aws:ec2:us-east-1:857934240020:instance/i-0e1e6f1293b393b5f" => <computed>
+      associate_public_ip_address:       "false" => <computed>
+      availability_zone:                 "us-east-1b" => "us-east-1b"
+      cpu_core_count:                    "1" => <computed>
+      cpu_threads_per_core:              "1" => <computed>
+      ebs_block_device.#:                "1" => <computed>
+      ephemeral_block_device.#:          "0" => <computed>
+      get_password_data:                 "false" => "false"
+      host_id:                           "" => <computed>
+      iam_instance_profile:              "etcd-node" => "etcd-node"
+      instance_state:                    "running" => <computed>
+      instance_type:                     "t2.micro" => "t2.micro"
+      ipv6_address_count:                "0" => <computed>
+      ipv6_addresses.#:                  "0" => <computed>
+      key_name:                          "andreys-MBP" => "andreys-MBP"
+      metadata_options.#:                "1" => <computed>
+      network_interface.#:               "0" => <computed>
+      network_interface_id:              "" => <computed>
+      outpost_arn:                       "" => <computed>
+      password_data:                     "" => <computed>
+      placement_group:                   "" => <computed>
+      primary_network_interface_id:      "eni-029eb1eeabc1e95ce" => <computed>
+      private_dns:                       "ip-10-42-1-221.ec2.internal" => <computed>
+      private_ip:                        "10.42.1.221" => <computed>
+      public_dns:                        "" => <computed>
+      public_ip:                         "" => <computed>
+      root_block_device.#:               "1" => <computed>
+      security_groups.#:                 "0" => <computed>
+      source_dest_check:                 "true" => "true"
+      subnet_id:                         "subnet-08a753368c3cc4973" => "subnet-08a753368c3cc4973"
+      tags.%:                            "5" => "5"
+      tags.Name:                         "etcd-1" => "etcd-1"
+      tags.Owner:                        "Andrey" => "Andrey"
+      tags.ansibleFilter:                "ETCD01" => "ETCD01"
+      tags.ansibleGroup:                 "etcd" => "etcd"
+      tags.ansibleNodeName:              "etcd1" => "etcd1"
+      tenancy:                           "default" => <computed>
+      user_data:                         "6e21b9e1507bfa4f2064eb46af3bed471c93b2cc" => "20133a718a717eae7faa084bf94a07c24e49dcd3" (forces new resource)
+      volume_tags.%:                     "2" => <computed>
+      vpc_security_group_ids.#:          "1" => "1"
+      vpc_security_group_ids.1746658572: "sg-06a252dd6d164e230" => "sg-06a252dd6d164e230"
+
+-/+ aws_instance.etcd[2] (new resource required)
+      id:                                "i-07d758a15f27c1d36" => <computed> (forces new resource)
+      ami:                               "ami-039a49e70ea773ffc" => "ami-039a49e70ea773ffc"
+      arn:                               "arn:aws:ec2:us-east-1:857934240020:instance/i-07d758a15f27c1d36" => <computed>
+      associate_public_ip_address:       "false" => <computed>
+      availability_zone:                 "us-east-1c" => "us-east-1c"
+      cpu_core_count:                    "1" => <computed>
+      cpu_threads_per_core:              "1" => <computed>
+      ebs_block_device.#:                "1" => <computed>
+      ephemeral_block_device.#:          "0" => <computed>
+      get_password_data:                 "false" => "false"
+      host_id:                           "" => <computed>
+      iam_instance_profile:              "etcd-node" => "etcd-node"
+      instance_state:                    "running" => <computed>
+      instance_type:                     "t2.micro" => "t2.micro"
+      ipv6_address_count:                "0" => <computed>
+      ipv6_addresses.#:                  "0" => <computed>
+      key_name:                          "andreys-MBP" => "andreys-MBP"
+      metadata_options.#:                "1" => <computed>
+      network_interface.#:               "0" => <computed>
+      network_interface_id:              "" => <computed>
+      outpost_arn:                       "" => <computed>
+      password_data:                     "" => <computed>
+      placement_group:                   "" => <computed>
+      primary_network_interface_id:      "eni-0eab7698cfb525da1" => <computed>
+      private_dns:                       "ip-10-42-2-191.ec2.internal" => <computed>
+      private_ip:                        "10.42.2.191" => <computed>
+      public_dns:                        "" => <computed>
+      public_ip:                         "" => <computed>
+      root_block_device.#:               "1" => <computed>
+      security_groups.#:                 "0" => <computed>
+      source_dest_check:                 "true" => "true"
+      subnet_id:                         "subnet-0c8f818b0a10465d5" => "subnet-0c8f818b0a10465d5"
+      tags.%:                            "5" => "5"
+      tags.Name:                         "etcd-2" => "etcd-2"
+      tags.Owner:                        "Andrey" => "Andrey"
+      tags.ansibleFilter:                "ETCD01" => "ETCD01"
+      tags.ansibleGroup:                 "etcd" => "etcd"
+      tags.ansibleNodeName:              "etcd2" => "etcd2"
+      tenancy:                           "default" => <computed>
+      user_data:                         "385a06524e03b8b4d5dd52374914e41d4584e07c" => "20133a718a717eae7faa084bf94a07c24e49dcd3" (forces new resource)
+      volume_tags.%:                     "2" => <computed>
+      vpc_security_group_ids.#:          "1" => "1"
+      vpc_security_group_ids.1746658572: "sg-06a252dd6d164e230" => "sg-06a252dd6d164e230"
+
+  + aws_key_pair.default_keypair
+      id:                                <computed>
+      fingerprint:                       <computed>
+      key_name:                          "andreys-MBP"
+      key_pair_id:                       <computed>
+      public_key:                        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgn/xcT6kWzYGnQ244LVCs0oVSJjMGZnm04OFeoSIRn0zT2n+JRiWaEMukyAOn1ZSQrfkyxTPjISYK/s0hllZpLVHATR1llF3UsSzxbSdUZ3awGrX9oxy7Z0uWt62/r3OVvr3FzJ8PMzodiOTuDNdecC7Aji0vbWWcmVuxogFw0p8Bveq1avYtBCKCgATVOd0diI13DdGwJ2LkBL1VAtTETp7437qQPRm8zTYRx9YYwW4YlwprdAAVITeoXkrOqcDRtE7UWZmtTXeLm5Vnb6+RaO/vYfuJsHJHKHtF4P1LG6Ug33Fc9qJw4WjI2EQQIwyuImGch7oPOyN/6K0uuJD5"
+
+-/+ null_resource.ssh_cfg (new resource required)
+      id:                                "1587758898570209959" => <computed> (forces new resource)
+      triggers.%:                        "1" => <computed> (forces new resource)
+      triggers.template_rendered:        "Host bastion 3.228.5.226 ec2-3-228-5-226.compute-1.amazonaws.com\n  Hostname 3.228.5.226\n  User ubuntu\n  ForwardAgent yes\n  ControlMaster auto\n  ControlPath ~/.ssh/ansible-%r@%h:%p\n  ControlPersist 5m\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n\nHost *.vpc.aws 10.42.*\n  ProxyCommand ssh ubuntu@3.228.5.226 -W %h:%p -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n  User ubuntu\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n" => "" (forces new resource)
+
+
+Plan: 5 to add, 1 to change, 4 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+null_resource.ssh_cfg: Destroying... (ID: 1587758898570209959)
+null_resource.ssh_cfg: Destruction complete after 0s
+data.template_file.etcd_user_data: Refreshing state...
+aws_instance.etcd[1]: Destroying... (ID: i-0e1e6f1293b393b5f)
+aws_instance.etcd[0]: Destroying... (ID: i-0b90df9609960e017)
+aws_instance.etcd[2]: Destroying... (ID: i-07d758a15f27c1d36)
+aws_key_pair.default_keypair: Creating...
+  fingerprint: "" => "<computed>"
+  key_name:    "" => "andreys-MBP"
+  key_pair_id: "" => "<computed>"
+  public_key:  "" => "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgn/xcT6kWzYGnQ244LVCs0oVSJjMGZnm04OFeoSIRn0zT2n+JRiWaEMukyAOn1ZSQrfkyxTPjISYK/s0hllZpLVHATR1llF3UsSzxbSdUZ3awGrX9oxy7Z0uWt62/r3OVvr3FzJ8PMzodiOTuDNdecC7Aji0vbWWcmVuxogFw0p8Bveq1avYtBCKCgATVOd0diI13DdGwJ2LkBL1VAtTETp7437qQPRm8zTYRx9YYwW4YlwprdAAVITeoXkrOqcDRtE7UWZmtTXeLm5Vnb6+RaO/vYfuJsHJHKHtF4P1LG6Ug33Fc9qJw4WjI2EQQIwyuImGch7oPOyN/6K0uuJD5"
+aws_key_pair.default_keypair: Creation complete after 2s (ID: andreys-MBP)
+aws_instance.etcd.0: Still destroying... (ID: i-0b90df9609960e017, 10s elapsed)
+aws_instance.etcd.2: Still destroying... (ID: i-07d758a15f27c1d36, 10s elapsed)
+aws_instance.etcd.1: Still destroying... (ID: i-0e1e6f1293b393b5f, 10s elapsed)
+aws_instance.etcd.2: Still destroying... (ID: i-07d758a15f27c1d36, 20s elapsed)
+aws_instance.etcd.1: Still destroying... (ID: i-0e1e6f1293b393b5f, 20s elapsed)
+aws_instance.etcd.0: Still destroying... (ID: i-0b90df9609960e017, 20s elapsed)
+aws_instance.etcd[0]: Destruction complete after 26s
+aws_instance.etcd[0]: Creating...
+  ami:                               "" => "ami-039a49e70ea773ffc"
+  arn:                               "" => "<computed>"
+  associate_public_ip_address:       "" => "<computed>"
+  availability_zone:                 "" => "us-east-1a"
+  cpu_core_count:                    "" => "<computed>"
+  cpu_threads_per_core:              "" => "<computed>"
+  ebs_block_device.#:                "" => "<computed>"
+  ephemeral_block_device.#:          "" => "<computed>"
+  get_password_data:                 "" => "false"
+  host_id:                           "" => "<computed>"
+  iam_instance_profile:              "" => "etcd-node"
+  instance_state:                    "" => "<computed>"
+  instance_type:                     "" => "t2.micro"
+  ipv6_address_count:                "" => "<computed>"
+  ipv6_addresses.#:                  "" => "<computed>"
+  key_name:                          "" => "andreys-MBP"
+  metadata_options.#:                "" => "<computed>"
+  network_interface.#:               "" => "<computed>"
+  network_interface_id:              "" => "<computed>"
+  outpost_arn:                       "" => "<computed>"
+  password_data:                     "" => "<computed>"
+  placement_group:                   "" => "<computed>"
+  primary_network_interface_id:      "" => "<computed>"
+  private_dns:                       "" => "<computed>"
+  private_ip:                        "" => "<computed>"
+  public_dns:                        "" => "<computed>"
+  public_ip:                         "" => "<computed>"
+  root_block_device.#:               "" => "<computed>"
+  security_groups.#:                 "" => "<computed>"
+  source_dest_check:                 "" => "true"
+  subnet_id:                         "" => "subnet-011c4aecb67a95287"
+  tags.%:                            "" => "5"
+  tags.Name:                         "" => "etcd-0"
+  tags.Owner:                        "" => "Andrey"
+  tags.ansibleFilter:                "" => "ETCD01"
+  tags.ansibleGroup:                 "" => "etcd"
+  tags.ansibleNodeName:              "" => "etcd0"
+  tenancy:                           "" => "<computed>"
+  user_data:                         "" => "a04fdebf34df4cdedeed19ebda00e67ba12d9333"
+  volume_tags.%:                     "" => "<computed>"
+  vpc_security_group_ids.#:          "" => "1"
+  vpc_security_group_ids.1746658572: "" => "sg-06a252dd6d164e230"
+aws_instance.etcd.1: Still destroying... (ID: i-0e1e6f1293b393b5f, 30s elapsed)
+aws_instance.etcd.2: Still destroying... (ID: i-07d758a15f27c1d36, 30s elapsed)
+aws_instance.etcd.0: Still creating... (10s elapsed)
+aws_instance.etcd[1]: Destruction complete after 37s
+aws_instance.etcd[1]: Creating...
+  ami:                               "" => "ami-039a49e70ea773ffc"
+  arn:                               "" => "<computed>"
+  associate_public_ip_address:       "" => "<computed>"
+  availability_zone:                 "" => "us-east-1b"
+  cpu_core_count:                    "" => "<computed>"
+  cpu_threads_per_core:              "" => "<computed>"
+  ebs_block_device.#:                "" => "<computed>"
+  ephemeral_block_device.#:          "" => "<computed>"
+  get_password_data:                 "" => "false"
+  host_id:                           "" => "<computed>"
+  iam_instance_profile:              "" => "etcd-node"
+  instance_state:                    "" => "<computed>"
+  instance_type:                     "" => "t2.micro"
+  ipv6_address_count:                "" => "<computed>"
+  ipv6_addresses.#:                  "" => "<computed>"
+  key_name:                          "" => "andreys-MBP"
+  metadata_options.#:                "" => "<computed>"
+  network_interface.#:               "" => "<computed>"
+  network_interface_id:              "" => "<computed>"
+  outpost_arn:                       "" => "<computed>"
+  password_data:                     "" => "<computed>"
+  placement_group:                   "" => "<computed>"
+  primary_network_interface_id:      "" => "<computed>"
+  private_dns:                       "" => "<computed>"
+  private_ip:                        "" => "<computed>"
+  public_dns:                        "" => "<computed>"
+  public_ip:                         "" => "<computed>"
+  root_block_device.#:               "" => "<computed>"
+  security_groups.#:                 "" => "<computed>"
+  source_dest_check:                 "" => "true"
+  subnet_id:                         "" => "subnet-08a753368c3cc4973"
+  tags.%:                            "" => "5"
+  tags.Name:                         "" => "etcd-1"
+  tags.Owner:                        "" => "Andrey"
+  tags.ansibleFilter:                "" => "ETCD01"
+  tags.ansibleGroup:                 "" => "etcd"
+  tags.ansibleNodeName:              "" => "etcd1"
+  tenancy:                           "" => "<computed>"
+  user_data:                         "" => "6e21b9e1507bfa4f2064eb46af3bed471c93b2cc"
+  volume_tags.%:                     "" => "<computed>"
+  vpc_security_group_ids.#:          "" => "1"
+  vpc_security_group_ids.1746658572: "" => "sg-06a252dd6d164e230"
+aws_instance.etcd[2]: Destruction complete after 37s
+aws_instance.etcd[2]: Creating...
+  ami:                               "" => "ami-039a49e70ea773ffc"
+  arn:                               "" => "<computed>"
+  associate_public_ip_address:       "" => "<computed>"
+  availability_zone:                 "" => "us-east-1c"
+  cpu_core_count:                    "" => "<computed>"
+  cpu_threads_per_core:              "" => "<computed>"
+  ebs_block_device.#:                "" => "<computed>"
+  ephemeral_block_device.#:          "" => "<computed>"
+  get_password_data:                 "" => "false"
+  host_id:                           "" => "<computed>"
+  iam_instance_profile:              "" => "etcd-node"
+  instance_state:                    "" => "<computed>"
+  instance_type:                     "" => "t2.micro"
+  ipv6_address_count:                "" => "<computed>"
+  ipv6_addresses.#:                  "" => "<computed>"
+  key_name:                          "" => "andreys-MBP"
+  metadata_options.#:                "" => "<computed>"
+  network_interface.#:               "" => "<computed>"
+  network_interface_id:              "" => "<computed>"
+  outpost_arn:                       "" => "<computed>"
+  password_data:                     "" => "<computed>"
+  placement_group:                   "" => "<computed>"
+  primary_network_interface_id:      "" => "<computed>"
+  private_dns:                       "" => "<computed>"
+  private_ip:                        "" => "<computed>"
+  public_dns:                        "" => "<computed>"
+  public_ip:                         "" => "<computed>"
+  root_block_device.#:               "" => "<computed>"
+  security_groups.#:                 "" => "<computed>"
+  source_dest_check:                 "" => "true"
+  subnet_id:                         "" => "subnet-0c8f818b0a10465d5"
+  tags.%:                            "" => "5"
+  tags.Name:                         "" => "etcd-2"
+  tags.Owner:                        "" => "Andrey"
+  tags.ansibleFilter:                "" => "ETCD01"
+  tags.ansibleGroup:                 "" => "etcd"
+  tags.ansibleNodeName:              "" => "etcd2"
+  tenancy:                           "" => "<computed>"
+  user_data:                         "" => "385a06524e03b8b4d5dd52374914e41d4584e07c"
+  volume_tags.%:                     "" => "<computed>"
+  vpc_security_group_ids.#:          "" => "1"
+  vpc_security_group_ids.1746658572: "" => "sg-06a252dd6d164e230"
+aws_instance.etcd.0: Still creating... (20s elapsed)
+aws_instance.etcd.1: Still creating... (10s elapsed)
+aws_instance.etcd.2: Still creating... (10s elapsed)
+aws_instance.etcd.0: Still creating... (30s elapsed)
+aws_instance.etcd.1: Still creating... (20s elapsed)
+aws_instance.etcd.2: Still creating... (20s elapsed)
+aws_instance.etcd[0]: Creation complete after 34s (ID: i-0e67ce9bc04e7bda2)
+aws_instance.etcd.1: Still creating... (30s elapsed)
+aws_instance.etcd.2: Still creating... (30s elapsed)
+aws_instance.etcd[1]: Creation complete after 33s (ID: i-0efc7694b80a8179f)
+aws_instance.etcd.2: Still creating... (40s elapsed)
+aws_instance.etcd[2]: Creation complete after 44s (ID: i-0e6f80dcde9a78436)
+data.template_file.ssh_cfg: Refreshing state...
+aws_elb.etcd: Modifying... (ID: andrey-etcd)
+  instances.1523806539: "i-07d758a15f27c1d36" => ""
+  instances.2206996344: "" => "i-0e67ce9bc04e7bda2"
+  instances.2237143278: "" => "i-0efc7694b80a8179f"
+  instances.3303850709: "i-0b90df9609960e017" => ""
+  instances.3958827588: "" => "i-0e6f80dcde9a78436"
+  instances.939031048:  "i-0e1e6f1293b393b5f" => ""
+null_resource.ssh_cfg: Creating...
+  triggers.%:                 "" => "1"
+  triggers.template_rendered: "" => "Host bastion 3.228.5.226 ec2-3-228-5-226.compute-1.amazonaws.com\n  Hostname 3.228.5.226\n  User ubuntu\n  ForwardAgent yes\n  ControlMaster auto\n  ControlPath ~/.ssh/ansible-%r@%h:%p\n  ControlPersist 5m\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n\nHost *.vpc.aws 10.42.*\n  ProxyCommand ssh ubuntu@3.228.5.226 -W %h:%p -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n  User ubuntu\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n"
+null_resource.ssh_cfg: Provisioning with 'local-exec'...
+null_resource.ssh_cfg (local-exec): Executing: ["/bin/sh" "-c" "rm -f ../ssh.cfg; echo 'Host bastion 3.228.5.226 ec2-3-228-5-226.compute-1.amazonaws.com\n  Hostname 3.228.5.226\n  User ubuntu\n  ForwardAgent yes\n  ControlMaster auto\n  ControlPath ~/.ssh/ansible-%r@%h:%p\n  ControlPersist 5m\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n\nHost *.vpc.aws 10.42.*\n  ProxyCommand ssh ubuntu@3.228.5.226 -W %h:%p -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n  User ubuntu\n  UserKnownHostsFile=/dev/null\n  StrictHostKeyChecking=no\n' > ../ssh.cfg"]
+null_resource.ssh_cfg: Creation complete after 0s (ID: 5894729469314478329)
+aws_elb.etcd: Modifications complete after 8s (ID: andrey-etcd)
+
+Apply complete! Resources: 5 added, 1 changed, 4 destroyed.
+
+Outputs:
+
+bastion_ip = 3.228.5.226
+etcd_dns = andrey-etcd-1064649120.us-east-1.elb.amazonaws.com
+etcd_ip = 10.42.0.158 10.42.1.154 10.42.2.35
+ip_authorised_for_inbound_traffic = 31.173.82.0/24

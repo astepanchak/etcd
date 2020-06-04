@@ -1,0 +1,65 @@
+
+
+# Run apt-get update
+package_update: true
+
+# Install packages (AWS CLI for boot scripts, below; Python 2.x for Ansible)
+packages:
+  - awscli
+  - python
+
+# Set the hostname and FQDN
+hostname: "#HOSTNAME"
+fqdn: "#HOSTNAME.${domain_name}"
+# Set our hostname in /etc/hosts too
+manage_etc_hosts: true
+
+write_files:
+  # Attach EBS data volume (first boot only)
+  - content: |
+      #!/bin/sh
+      REGION="${region}"
+      VOLUME_ID=#VOLUMEID
+      SELF_META_URL="http://169.254.169.254/latest/meta-data"
+      INSTANCE_ID=$(curl $${SELF_META_URL}/instance-id 2>/dev/null)
+
+      aws ec2 attach-volume --volume-id $${VOLUME_ID} --instance-id $${INSTANCE_ID} --device /dev/sdh --region $${REGION}
+    path: /var/lib/cloud/scripts/per-once/attach_data_volume.sh
+    permissions: 0755
+
+  # Write a script that executes on every boot and sets a DNS entry pointing to
+  # this instance. This requires the instance having an appropriate IAM role set,
+  # so it has permission to perform the changes to Route53.
+  - content: |
+      #!/bin/sh
+      FQDN=`hostname -f`
+      ZONE_ID="${zone_id}"
+      TTL=${record_ttl}
+      SELF_META_URL="http://169.254.169.254/latest/meta-data"
+      PRIVATE_DNS=$(curl $${SELF_META_URL}/local-hostname 2>/dev/null)
+
+      cat << EOT > /tmp/aws_r53_batch.json
+      {
+        "Comment": "Assign AWS Private DNS as a CNAME of hostname",
+        "Changes": [
+          {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+              "Name": "$${FQDN}.",
+              "Type": "CNAME",
+              "TTL": $${TTL},
+              "ResourceRecords": [
+                {
+                  "Value": "$${PRIVATE_DNS}"
+                }
+              ]
+            }
+          }
+        ]
+      }
+      EOT
+
+      aws route53 change-resource-record-sets --hosted-zone-id $${ZONE_ID} --change-batch file:///tmp/aws_r53_batch.json
+      rm -f /tmp/aws_r53_batch.json
+    path: /var/lib/cloud/scripts/per-boot/set_route53_dns.sh
+    permissions: 0755

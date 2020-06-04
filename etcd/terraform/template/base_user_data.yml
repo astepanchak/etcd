@@ -1,0 +1,13 @@
+
+# Run apt-get update
+package_update: true
+
+# Install Python 2.x for bootstrapping Ansible
+packages:
+  - python
+
+# Set the hostname and FQDN
+hostname: "${hostname}"
+fqdn: "${hostname}.${domain_name}"
+# Set our hostname in /etc/hosts too
+manage_etc_hosts: true

@@ -1,0 +1,22 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos
+
+[Service]
+ExecStart=/usr/bin/etcd --name {{ inventory_hostname }} \
+  --discovery-srv {{ internal_dns_zone }} \
+  --initial-advertise-peer-urls http://{{ private_dns_cname }}:{{ etcd_peer_port }} \
+  --advertise-client-urls http://{{ private_dns_cname }}:{{ etcd_client_port }} \
+  --listen-peer-urls http://0.0.0.0:{{ etcd_peer_port }} \
+  --listen-client-urls http://0.0.0.0:{{ etcd_client_port }} \
+  --initial-cluster-token etcd-cluster-0 \
+  --initial-cluster-state new \
+  --data-dir=/var/lib/etcd \
+  --debug
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
