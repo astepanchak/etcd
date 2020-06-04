@@ -1,8 +1,0 @@
-Apply complete! Resources: 5 added, 1 changed, 4 destroyed.
-
-Outputs:
-
-bastion_ip = 54.160.57.233
-etcd_dns = andrey-etcd-271665528.us-east-1.elb.amazonaws.com
-etcd_ip = 10.42.0.241 10.42.1.239 10.42.2.222
-ip_authorised_for_inbound_traffic = 217.66.157.0/24
